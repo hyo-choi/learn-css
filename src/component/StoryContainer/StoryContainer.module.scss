@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  min-height: 50vh;
+  min-width: 50vw;
+}
+
+.link,
+.link:active,
+.link:hover {
+  color: gray;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: black;
+}
+
+.story {
+  background-color: lightgray;
+  width: 100px;
+  height: 100px;
+}
