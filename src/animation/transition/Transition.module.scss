@@ -1,0 +1,64 @@
+.background {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.transition {
+  transition: transform 0.5s ease-in-out;
+}
+
+.background:hover .transition {
+  transform: translateX(100%);
+}
+
+.animationReverse {
+  animation: move-back 1s ease-in-out;
+}
+
+.background:hover .animation,
+.background:hover .animationReverse {
+  animation: move-around 1s ease-in-out forwards alternate;
+}
+
+@keyframes move-around {
+  from {
+    transform: translateX(0%);
+  }
+
+  33% {
+    transform: translateY(100%);
+  }
+
+  66% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes move-back {
+  to {
+    transform: translateX(0%);
+  }
+
+  66% {
+    transform: translateY(100%);
+  }
+
+  33% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  from {
+    transform: translateX(100%);
+  }
+}
