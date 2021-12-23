@@ -1,3 +1,5 @@
+@import "../../mixins/mixins.scss";
+
 .background {
   width: 200px;
   height: 200px;
@@ -11,54 +13,54 @@
 }
 
 .transition {
-  transition: transform 0.5s ease-in-out;
+  @include cb-transition(transform 0.5s ease-in-out);
 }
 
 .background:hover .transition {
-  transform: translateX(100%);
+  @include cb-transform(translateX(100%));
 }
 
 .animationReverse {
-  animation: move-back 1s ease-in-out;
+  @include cb-animation(move-back 1s ease-in-out);
 }
 
 .background:hover .animation,
 .background:hover .animationReverse {
-  animation: move-around 1s ease-in-out forwards alternate;
+  @include cb-animation(move-around 1s ease-in-out forwards alternate);
 }
 
 @keyframes move-around {
   from {
-    transform: translateX(0%);
+    @include cb-transform(translateX(0%));
   }
 
   33% {
-    transform: translateY(100%);
+    @include cb-transform(translateY(100%));
   }
 
   66% {
-    transform: translateX(100%) translateY(100%);
+    @include cb-transform(translateX(100%) translateY(100%));
   }
 
   to {
-    transform: translateX(100%);
+    @include cb-transform(translateX(100%));
   }
 }
 
 @keyframes move-back {
-  to {
-    transform: translateX(0%);
-  }
-
-  66% {
-    transform: translateY(100%);
+  from {
+    @include cb-transform(translateX(100%));
   }
 
   33% {
-    transform: translateX(100%) translateY(100%);
+    @include cb-transform(translateX(100%) translateY(100%));
   }
 
-  from {
-    transform: translateX(100%);
+  66% {
+    @include cb-transform(translateY(100%));
+  }
+
+  to {
+    @include cb-transform(translateX(0%));
   }
 }

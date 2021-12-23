@@ -1,0 +1,44 @@
+@mixin cb-transform($args) {
+  -webkit-transform:  $args;
+  -o-transform:       $args;
+  -ms-transform:      $args;
+  -moz-transform:     $args;
+  transform:          $args;
+}
+
+@mixin cb-transition($args) {
+  -webkit-transition: $args;
+  -moz-transition:    $args;
+  -o-transition:      $args;
+  -ms-transition:     $args;
+  transition:         $args;
+}
+
+@mixin cb-animation($args) {
+  -webkit-animation:  $args;
+  -moz-animation:     $args; 
+  -o-animation:       $args;
+  -ms-animation:      $args;
+  animation:          $args;
+}
+
+/* NOTE: keyframes의 identifier에는 variable을 사용할 수 없는 듯한데...
+         좀 더 효율적으로 사용할 방법이 없을까?
+@mixin cb-keyframes($name, $props) {
+  @keyframes $name {
+    $props;
+  }
+  @-webkit-keyframes $name {
+    $props;
+  }
+  @-moz-keyframes $name {
+    $props;
+  }
+  @-ms-keyframes $name {
+    $props;
+  }
+  @-o-keyframes $name {
+    $props;
+  }
+}
+*/
