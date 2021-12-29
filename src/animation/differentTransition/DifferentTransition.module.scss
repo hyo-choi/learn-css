@@ -1,0 +1,51 @@
+@import "../../mixins/mixins.scss";
+
+.template {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  width: 20vw;
+  padding: 30px;
+  border: 1px solid #eee;
+  overflow: hidden;
+
+  button {
+    cursor: pointer;
+    border: 0;
+    width: 100%;
+    height: 2em;
+    border-radius: 0.5em;
+    background-color: darkblue;
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+  }
+
+  div {
+    will-change: transform;
+    @include cb-transition(transform 0.5s ease-in-out);
+    @include cb-transform(translateY(-300%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    border-radius: 1em;
+    background-color: #eee;
+  }
+
+  div.clicked {
+    @include cb-transition(transform 0.5s ease-in-out);
+    @include cb-transform(translateY(0%));
+  }
+
+  div.different {
+    @include cb-transition(transform 0.15s ease-in);
+  }
+
+  div.different.clicked {
+    @include cb-transition(transform 0.5s ease-out);
+    @include cb-transform(translateY(0%));
+  }
+}
