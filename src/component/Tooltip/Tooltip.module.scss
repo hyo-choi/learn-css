@@ -1,0 +1,35 @@
+.tooltip {
+  cursor: pointer;
+}
+
+.tooltip::before {
+  position: absolute;
+  text-align: center;
+  padding: 0.25em;
+  content: attr(data-tooltip);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  color: white;
+  cursor: default;
+  transform: scale(0);
+  transform-origin: bottom center;
+  transition: transform 0.2s;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+}
+
+/* hover로 바꾸기 */
+.tooltip:hover::before {
+  display: block;
+  transform: scale(1) translateY(-50%);
+}
+
+.story {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: lightgray;
+}
