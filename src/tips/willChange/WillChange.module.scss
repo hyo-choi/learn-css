@@ -1,0 +1,26 @@
+@import "../../mixins/mixins.scss";
+
+.base {
+  display: flex;
+  align-items: flex-end;
+  width: 100px;
+  height: 130px;
+  div {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #eee;
+    @include cb-transition(transform 0.5s);
+  }
+}
+
+.base:hover div {
+  @include cb-transform(TranslateY(-30%));
+}
+
+.withHint div {
+  will-change: transform;
+}
